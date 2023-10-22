@@ -9,11 +9,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f3f3f3;
         }
 
         header {
-            background-color: #333;
+            background-color: #003366;
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -25,13 +25,46 @@
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            border-radius: 10px;
             text-align: center;
         }
 
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #001f4d;
+        }
+
+        #additionalMessages, #customMessage {
+            display: none;
+            text-align: left;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        #additionalMessages p, #customMessage p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        #customMessage p {
+            font-style: italic;
+        }
+
         footer {
+            background-color: #003366;
+            color: white;
             text-align: center;
-            margin-top: 20px;
+            padding: 20px 0;
         }
     </style>
 </head>
@@ -41,21 +74,88 @@
     </header>
     <main>
         <p>
-            Dear Sithara,<br>
-            We want to express our heartfelt gratitude for your kindness and expertise in helping someone with their insurance claim.
-            The noble work you've done have made a significant impact on their life.
+            Dear Sithara,
         </p>
         <p>
-            This website is a small token of our appreciation for your selfless act.
-            We hope it brings a smile to your face.
+            We want to express our heartfelt gratitude for your kindness and expertise in helping someone with their insurance claim. The noble work you've done has made a significant impact on their life.
         </p>
+        <p>
+            This website is a small token of our appreciation for your selfless act. We hope it brings a smile to your face.
+        </p>
+
+        <button id="customMessageButton">Leader</button>
+        <div id="additionalMessages">
+            <p>
+                Dear [Name],
+            </p>
+            <p>
+                I wanted to take a moment to express the deep admiration and respect I have for you. You are the kind of leader to whom I want to follow wherever you go. It may officially say "Assistant Vice President" on your title, but in my eyes, it feels like you are already a Senior Vice President.
+            </p>
+            <p>
+                Your leadership is not defined by a position, but by the incredible person that you are. You have this amazing ability to understand everyone and support everyone with such grace and compassion. Your power doesn't come from your title; it comes from your personality, your kindness, and your unwavering commitment to making a positive impact on those around you.
+            </p>
+            <p>
+                In the time I've had the privilege of working with you, I've learned so much, not just about our profession, but about leadership and how to be a better person. Your guidance and mentorship have been invaluable to me, and I can't thank you enough for the opportunities you've provided and the wisdom you've shared.
+            </p>
+            <p>
+                It's rare to come across someone who is not only outstanding at what they do but also genuinely caring and selfless in their approach. You inspire everyone around you to do better and be better. I am truly lucky to have you as a leader and role model in my professional journey.
+            </p>
+            <p>
+                Thank you for being the exceptional person that you are, for leading by example, and for making our workplace a better and more harmonious environment. I look forward to following your lead wherever it may take us because I know that, with you, it will be a journey worth embarking on.
+            </p>
+            <p>
+                With heartfelt gratitude and admiration,
+            </p>
+            <p>
+                [Your Name]
+            </p>
+        </div>
+        <div id="customMessage">
+            <p>
+                Dear S,
+            </p>
+            <p>
+                I wanted to take a moment to express the deep admiration and respect I have for you. You are the kind of leader to whom I want to follow wherever you go. It may officially say "Assistant Vice President" on your title, but in my eyes, it feels like you are already a Senior Vice President.
+            </p>
+            <p>
+                Your leadership is not defined by a position, but by the incredible person that you are. You have this amazing ability to understand everyone and support everyone with such grace and compassion. Your power doesn't come from your title; it comes from your personality, your kindness, and your unwavering commitment to making a positive impact on those around you.
+            </p>
+            <p>
+                In the time I've had the privilege of working with you, I've learned so much, not just about our profession, but about leadership and how to be a better person. Your guidance and mentorship have been invaluable to me, and I can't thank you enough for the opportunities you've provided and the wisdom you've shared.
+            </p>
+            <p>
+                It's rare to come across someone who is not only outstanding at what they do but also genuinely caring and selfless in their approach. You inspire everyone around you to do better and be better. I am truly lucky to have you as a leader and role model in my professional journey.
+            </p>
+            <p>
+                Thank you for being the exceptional person that you are, for leading by example, and for making our workplace a better and more harmonious environment. I look forward to following your lead wherever it may take us because I know that, with you, it will be a journey worth embarking on.
+            </p>
+            <p>
+                With heartfelt gratitude and admiration,
+            </p>
+            <p>
+                M
+            </p>
+        </div>
     </main>
     <footer>
         <p>With love and gratitude, your friendly neighborhood code monkey 🐒</p>
         <p>P.S. Always here to debug life's problems!</p>
     </footer>
     <script>
-      
+        const additionalMessages = document.getElementById("additionalMessages");
+        const customMessage = document.getElementById("customMessage");
+        const customMessageButton = document.getElementById("customMessageButton");
+
+        customMessageButton.addEventListener("click", () => {
+            if (customMessage.style.display === "none") {
+                customMessage.style.display = "block";
+                additionalMessages.style.display = "none";
+                customMessageButton.textContent = "Back";
+            } else {
+                customMessage.style.display = "none";
+                customMessageButton.textContent = "Leader";
+            }
+        });
     </script>
 </body>
 </html>
